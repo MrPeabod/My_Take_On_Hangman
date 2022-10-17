@@ -113,10 +113,10 @@ def check_guess(char: str) -> bool:
     if char in alphabet:
         char = char.lower()
         if char in word_to_guess:
-            print(f"\nThe word you are looking for does contains {char}!")
+            print(f"\nThe word you are looking for does contain {char}!")
             update_guess_bar(char)
         else:
-            print(f"\nThe word you are looking for does not contains {char}!\nYou loose 1 live.\n")
+            print(f"\nThe word you are looking for does not contain {char}!\nYou loose 1 live.\n")
             num_of_lives -= 1
         return True
     else:
@@ -149,12 +149,12 @@ while num_of_lives >= 0:
         print(f"\nYou already guessed {curr_guess}.\nTry again.")
 
     if num_of_lives == 0:
-        print("You are out of lives! You might need to lower the difficulty.\n Or just try again.")
+        print("You are out of lives! You might need to lower the difficulty.\nOr just try again.")
         print(hangman_fig[6-num_of_lives])
-        print(f"The word was {word_to_guess}.")
+        print(f"The word was \"{word_to_guess}\".")
         break
 
     if guess_bar.replace(" ", "") == word_to_guess:
-        print(f"The word was {word_to_guess}.")
+        print(f"The word was \"{word_to_guess}\".")
         print("Congratulations, you win!")
         break
